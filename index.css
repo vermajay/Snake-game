@@ -1,0 +1,137 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Press Start 2P', system-ui;
+}
+
+body,
+.snake{
+    background-color: #414141;
+}
+
+#game-board{
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 13px;
+}
+
+.game-border-1{
+    position: relative;
+    border: #595f43 0.5rem solid;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 0 0.5rem #595f43;
+}
+.game-border-2{
+    border: #abb78a 0.5rem solid;
+    border-radius: 1.8rem;
+    box-shadow: inset 0 0 0 0.7rem #abb78a;
+}
+.game-border-3{
+    border: #8b966c 1rem solid;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 0 0 0.7rem #8b966c;
+}
+
+#instruction-text{
+    position: absolute;
+    top: 70%;
+    left: 12%;
+    color: #333;
+    font-size: 1.1rem;
+    width: 300px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    margin: 0px;
+}
+#logo{
+    position: absolute;
+    top: 18%;
+    left: 24%;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-between;
+}
+
+#score{
+    color: #abb78a;
+}
+#highScore{
+    color: #d8ddca;
+    display: none;
+}
+
+#score,
+#highScore{
+    font-size: 27px;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+.game-border-3{
+    background-color: #c4cfa3;
+}
+
+.snake{
+    border: #5a5a5a 1px dotted;
+    border-radius: 1.5px;
+}
+
+.food{
+    position: relative;
+}
+.apple{
+    position: absolute;
+    top: -26%;
+    left: -26%;
+    content:url("./assets/apple.png");
+    height: 32px;
+    /* animation: bounce 2s ease-out infinite; */
+}
+@keyframes bounce {
+    0%, 50%, 100% {transform: translateY(0);}
+	20% {transform: translateY(-2px);}
+	30% {transform: translateY(-2.5px);}
+	50% {transform: translateY(2.5px);}
+	70% {transform: translateY(2px);}
+}
+
+.footer{
+    position: absolute;
+    bottom: 1%;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 40px;
+}
+
+.links{
+    display: flex;
+    gap: 30px;
+}
+
+.link{
+    color: #ccc;
+    text-decoration: none;
+}
+.link:hover{
+    color: #757575;
+    transition: all;
+    transition-duration: 100ms;
+}
+@media (max-width: 476px) {
+    .footer {
+        gap: 0px;
+    }
+}
